@@ -5,7 +5,6 @@
  */
 package classes;
 
-import entity.Book;
 import entity.Reader;
 import java.util.Scanner;
 
@@ -17,18 +16,31 @@ public class ReaderProvider {
     public Reader createReader(){
         Reader reader = new Reader();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("--- Регистрация нового читателя ---");
-        System.out.println("Введите имя читателя: ");
+        
+        //----------------- Inset Data of book--------------------
+        reader.setId(null);
+        
+        System.out.println("Введите имя: ");
         reader.setName(scanner.nextLine());
-        System.out.println("Введите фамилию читателя: ");
+        
+        System.out.println("Введите фамилию: ");
         reader.setLastname(scanner.nextLine());
-        System.out.println("Введите день рождения читателя: ");
+        
+        System.out.println("Введите день рождения: ");
         reader.setDay(new Integer(scanner.nextLine()));
-        System.out.println("Введите месяц рождения читателя: ");
+        
+        System.out.println("Введите месяц рождения ");
         reader.setMonth(new Integer(scanner.nextLine()));
-        System.out.println("Введите год рождения читателя: ");
+        
+        System.out.println("Введите год рождения ");
         reader.setYear(new Integer(scanner.nextLine()));
-        System.out.println("Регистрация нового читателя завершена");
-        return reader;
-    }    
+        
+        System.out.println(" Для сохранения читателя нажмите y / n - отмена сохранения");
+        
+        String flag = scanner.next();
+        if("y".equals(flag)){
+            return reader;
+        }
+        return null;
+    }
 }

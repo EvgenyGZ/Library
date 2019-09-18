@@ -5,11 +5,13 @@
  */
 package entity;
 
+import java.io.Serializable;
+
 /**
  *
  * @author melnikov
  */
-public class Reader {
+public class Reader implements Serializable{
     private Long id;
     private String name;
     private String lastname;
@@ -80,14 +82,6 @@ public class Reader {
     @Override
     public String toString() {
         return "Reader{" + "id=" + id + ", name=" + name + ", lastname=" + lastname + ", day=" + day + ", month=" + month + ", year=" + year + '}';
-    }
-
-    public void setTitle(String nextLine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setAuthor(String nextLine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

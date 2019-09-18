@@ -1,34 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package classes;
 
 import entity.Book;
 import java.util.Scanner;
 
-/**
- *
- * @author pupil
- */
+
 public class BookProvider {
     public Book createBook(){
         Book book = new Book();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("--- Создание новой книги ---");
-        System.out.println("Введите название книги: ");
+        
+        //----------------- Inset Data of book--------------------
+        book.setId(null);
+        
+        System.out.println("Введите название: ");
         book.setTitle(scanner.nextLine());
-        System.out.println("Введите имя автора книги: ");
+        
+        System.out.println("Введите автора: ");
         book.setAuthor(scanner.nextLine());
-        System.out.println("Введите год издания книги: ");
+        
+        System.out.println("Введите год издания: ");
         book.setYear(new Integer(scanner.nextLine()));
-        System.out.println("Для добавления книги нажмите \"y\"");
-        System.out.println("Для отмены добавления книги нажмите любой другой символ");
+        
+        System.out.println(" Для сохранения книги в библиотеку нажмите y / n - отмена сохранения");
+        
         String flag = scanner.next();
         if("y".equals(flag)){
             return book;
         }
         return null;
-    }    
+    }
 }
