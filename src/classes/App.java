@@ -95,7 +95,7 @@ public class App {
 
                     case "4":
                                     
-                        System.out.println("4. Читатель вернул книгу в библиотеку");
+                        
                         historyProvider.returnBook(listHistories);
                         saverToFile.saveHistories(listHistories);
                         break;
